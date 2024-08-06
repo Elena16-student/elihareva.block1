@@ -8,7 +8,7 @@ elif first == second:
     print(2)
 elif first == third:
     print(2)
-elif first == third:
+elif second == third:
     print(2)
 else:
     print(0)
@@ -22,7 +22,7 @@ elif first_ == second_:
     print(2)
 elif first_ == third_:
     print(2)
-elif first_ == third_:
+elif second_ == third_:
     print(2)
 else:
     print(0)
