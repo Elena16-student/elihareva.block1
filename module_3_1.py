@@ -16,15 +16,15 @@ def is_contains(string_, list_to_search):
     count_calls()
     bool = True #далее приводим шрифт к общему знаменателю, # у нас к заглавному ( можно наоборот к lower)
     bool_ = ' '.join(list_to_search).upper() #см. тему "строки" и ссылку на 41  вопрос по строкам
-    if bool_.find(string_.upper()) == -1: # find выдает -1 , если искомая строка в подстроке не найдена
-        bool = False # если строки нет в подстроке, то выдается ложь соответственно
+    if bool_.find(string_.upper()) == -1: # find выдает -1 , если искомая строка в списке не найдена
+        bool = False # если строки нет в списке, то выдается ложь соответственно
     return bool
 
 
 print(string_info('Visantia'))
 print(string_info('Stambul'))
 print(string_info('Rom'))
-print(is_contains('Стол', ['столовая', 'подстолье', 'застолье']))
+print(is_contains('КресЛо', ['столовая', 'креСлО', 'застолье']))
 print(is_contains('notebook', ['ball', 'note', 'rice']))
 
 print(calls)
