@@ -21,14 +21,17 @@ if __name__ == '__main__':
     start = datetime.now()
     for filename in filenames:
         read_info(filename)
-    end = datetime.now()
+        end = datetime.now()
+        profit_time = end - start
     print(f"Линейный вызов занял: {end - start} секунд")
 
     start_1 = datetime.now()
     with Pool(processes=4) as pool:
         pool.map(read_info, filenames)
     end_1 = datetime.now()
+    profit_time_1 = end_1 - start_1
     print(f"Многопроцессный вызов занял: {end_1 - start_1} секунд")
+    print(f'Многопроцессорный вызов выполнен  на {profit_time - profit_time_1} секунд быстрее, чем линейный')
 # Домашнее задание по теме "Многопроцессное программирование"
 
 """
