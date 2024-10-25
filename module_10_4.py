@@ -60,4 +60,4 @@ class Cafe:
 
 cafe = Cafe(*tables) # Заполнение кафе столами
 cafe.guest_arrival(*guests) # Приём гостей
-cafe.discuss_guests() # Приём гостей
+cafe.discuss_guests() # Обслужмвание гостей
