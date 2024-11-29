@@ -16,25 +16,25 @@
 from aiogram import Bot, dispatcher, executor, types, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import asyncio
-
 api = ""
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
 @dp.message_handler(text = ["Urban", "ff"])
 async def urban_message(message):
-    print("Urban_message")
     await message.answer("Urban_message")
 
 @dp.message_handler(commands=["start"])
 async def start_message(message):
-    print("Привет! Я бот помогающий твоему здоровью.")
     await message.answer("Рады Вам!")
+
+@dp.message_handler(text=["Ты кто?"])
+async def text_message(message):
+    await message.answer("Я бот")
+    await message.answer(message.text.lower())
 
 @dp.message_handler()
 async def all_message(message):
-    print("Введите команду /start, чтобы начать общение.")
-    await message.answer(message.text.lower())
+    await message.answer("Введите команду /start, чтобы начать общение.")
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
-
