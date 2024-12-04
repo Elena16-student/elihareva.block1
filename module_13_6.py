@@ -26,7 +26,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.dispatcher import FSMContext
 import asyncio
 
-api = ""
+api = "7736483821:AAFnQtOAiUcqouHeZvTUYFDYCRGZ9oPBBrg"
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
@@ -60,9 +60,10 @@ async def main_menu(message):
 
 @dp.callback_query_handler(text='formulas')
 async def get_formulas(call):
-    await call.message.answer('Расчет для женщин: 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) – 161',
-                                '\nРасчет для мужчин: 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) +5')
+    await call.message.answer('Расчет для женщин: 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) – 161'
+                              '\nРасчет для мужчин : 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) + 5')
     await call.answer()
+
 
 @dp.callback_query_handler(text='calories')
 async def set_age(call):
@@ -92,9 +93,6 @@ async def rec_calories(message, state):
     await message.answer(f'Ваша норма калорий: {rec_calor_woman} ккал в сутки (для женщин)')
     await message.answer(f'Ваша норма калорий: {rec_calor_man} ккал в сутки (для мужчин)')
 
-    # @dp.message_handler(text='Информация')
-    # async def set_age(message):
-    #     await message.answer(f"Ваша норма калорий: {rec_calor_woman} Срочно садитесь на диету!")
 
     await state.finish()
 
