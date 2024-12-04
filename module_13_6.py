@@ -50,6 +50,8 @@ class UserState(StatesGroup):
 @dp.message_handler(commands=["start"])
 async def start(message):
     await message.answer('Приветствую!', reply_markup=kb)
+
+
 @dp.message_handler(text='Информация')
 async def inform(message):
     await message.answer('Хочешь узнать свою суточную норму калорий по науке?'
@@ -92,10 +94,11 @@ async def rec_calories(message, state):
     rec_calor_man = (10 * int(data['weight']) + 6.25 * int(data['growth']) - 5 * int(data['age']) + 5)
     await message.answer(f'Ваша норма калорий: {rec_calor_woman} ккал в сутки (для женщин)')
     await message.answer(f'Ваша норма калорий: {rec_calor_man} ккал в сутки (для мужчин)')
-
-
     await state.finish()
 
+@dp.message_handler()
+async def all_message(message):
+    await message.answer(f"Введите команду /start, чтобы начать общение.")
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
