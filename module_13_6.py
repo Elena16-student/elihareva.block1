@@ -18,7 +18,7 @@
 # В ответ на кнопку 'Рассчитать' присылается Inline меню: 'Рассчитать норму калорий' и 'Формулы расчёта'
 # По Inline кнопке 'Формулы расчёта' присылается сообщение с формулой.
 # По Inline кнопке 'Рассчитать норму калорий' начинает работать машина состояний по цепочке.
-from aiogram import Bot, dispatcher, executor, types, Dispatcher
+from aiogram import Bot, executor, types, Dispatcher
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
@@ -26,7 +26,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.dispatcher import FSMContext
 import asyncio
 
-api = "7736483821:AAFnQtOAiUcqouHeZvTUYFDYCRGZ9oPBBrg"
+api = ""
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
